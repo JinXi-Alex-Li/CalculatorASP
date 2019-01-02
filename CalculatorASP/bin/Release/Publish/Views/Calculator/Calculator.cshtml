@@ -1,0 +1,87 @@
+﻿@model CalculatorASP.Models.Calculator
+
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+
+<div id="DisplaySpace">
+    <div class="col-md-4">
+        @if (ViewBag.UpperText == "")
+        {
+            <input type="text" id="Calculation" value="" class="textspan" disabled />
+        }
+        else
+        {
+            <input type="text" id="Calculation" value=@ViewBag.UpperText class="textspan" disabled />
+        }
+
+        </div>
+    <div class="col-md-4">
+        <input type="text" id="CurrentValue" value=@ViewBag.LowerText class="textspan" disabled />
+    </div>
+</div>
+
+
+<form id="CalculatorSpace" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <input type="submit" name="command" id="Per" value="%" class="buttonspan" />
+            <input type="submit" name="command" id="Sqrt" value="√" class="buttonspan" />
+            <input type="submit" name="command" id="Sqr" value="x²" class="buttonspan" />
+            <input type="submit" name="command" id="Inv" value="⅟x" class="buttonspan" />
+        </div>
+    </div>
+
+    <div>
+        <div class="col-md-4">
+            <input type="submit" name="command" id="CE" value="CE" class="buttonspan" />
+            <input type="submit" name="command" id="C" value="C" class="buttonspan" />
+            <input type="submit" name="command" id="Del" value="⌫" class="buttonspan" />
+            <input type="submit" name="command" id="Div" value="÷" class="buttonspan" />
+        </div>
+    </div>
+
+    <div>
+        <div class="col-md-4">
+            <input type="submit" name="command" id="N7" value="7" class="buttonspan" />
+            <input type="submit" name="command" id="N8" value="8" class="buttonspan" />
+            <input type="submit" name="command" id="N9" value="9" class="buttonspan" />
+            <input type="submit" name="command" id="Mul" value="×" class="buttonspan" />
+        </div>
+    </div>
+
+    <div>
+        <div class="col-md-4">
+            <input type="submit" name="command" id="N4" value="4" class="buttonspan" />
+            <input type="submit" name="command" id="N5" value="5" class="buttonspan" />
+            <input type="submit" name="command" id="N6" value="6" class="buttonspan" />
+            <input type="submit" name="command" id="Sub" value="-" class="buttonspan" />
+        </div>
+    </div>
+
+    <div>
+        <div class="col-md-4">
+            <input type="submit" name="command" id="N1" value="1" class="buttonspan" />
+            <input type="submit" name="command" id="N2" value="2" class="buttonspan" />
+            <input type="submit" name="command" id="N3" value="3" class="buttonspan" />
+            <input type="submit" name="command" id="Add" value="+" class="buttonspan" />
+        </div>
+    </div>
+
+    <div>
+        <div class="col-md-4">
+            <input type="submit" name="command" id="Neg" value="±" class="buttonspan" />
+            <input type="submit" name="command" id="N0" value="0" class="buttonspan" />
+            <input type="submit" name="command" id="ND" value="." class="buttonspan" />
+            <input type="submit" name="command" id="Sol" value="=" class="buttonspan" />
+        </div>
+    </div>
+</form>
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
