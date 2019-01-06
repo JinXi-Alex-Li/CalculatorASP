@@ -87,6 +87,12 @@ namespace CalculatorASP.Controllers
                     ViewBag.UpperText = Calc.ToString();
                     return View();
                 }
+                catch (DivideByZeroException)
+                {
+                    Calc.Clear();
+                    ViewBag.LowerText = "Cannot divide by zero";
+                    return View();
+                }
                 catch (Exception)
                 {
                     return Redirect("~/Shared/DataErrorInfoModelValidatorProvider.cshtml");
